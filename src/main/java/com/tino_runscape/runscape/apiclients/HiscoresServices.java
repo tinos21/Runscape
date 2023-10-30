@@ -1,0 +1,40 @@
+package com.tino_runscape.runscape.apiclients;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+
+
+@Service
+public class HiscoresServices {
+
+    private final RestTemplate restTemplate;
+
+    @Autowired
+    public HiscoresServices(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    // String url = http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=mandzeete
+
+
+    public String makeGetRequest() {
+        String apiUrl = "http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=mandzeete"; //  URL
+        try {
+
+            String response;
+            response = restTemplate.getForObject(apiUrl, String.class);
+            System.out.println("Response Data:\n" + response); // printing the response on screen
+            return response;
+        } catch (Exception e) {
+            return "Error: " + e.getMessage();
+        }
+
+    }
+
+}
+
+
+
