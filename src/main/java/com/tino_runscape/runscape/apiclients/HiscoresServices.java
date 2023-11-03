@@ -27,7 +27,12 @@ public class HiscoresServices {
             String response;
             response = restTemplate.getForObject(apiUrl, String.class);
             System.out.println("Response Data:\n" + response); // printing the response on screen
+
+            ///////////////////////////////////
+
+
             return response;
+
         } catch (Exception e) {
             return "Error: " + e.getMessage();
         }

@@ -1,10 +1,11 @@
 package com.tino_runscape.runscape;
 
-//// import hiscoresController class inside main
-import  com.tino_runscape.runscape.controllers.HiscoresController;
-// importing HiscoresService class inside main
-import  com.tino_runscape.runscape.apiclients.HiscoresServices;
 
+//
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+////
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,6 +23,27 @@ public class RunscapeApplication {
 
 		SpringApplication.run(RunscapeApplication.class, args);
 		System.out.println("we are running springboot THANKS AIVAR");
+
+
+        //////////////////////////////  new code
+
+		RestTemplate restTemplate = new RestTemplate();
+
+		String url = "http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=mandzeete"; // Replace with your API endpoint URL
+
+		ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+
+		// Check the HTTP status code to ensure a successful response
+		if (response.getStatusCode().is2xxSuccessful()) {
+			String responseBody = response.getBody();
+			System.out.println("HTTP Response Body:");
+			System.out.println(responseBody);
+		} else {
+			System.out.println("HTTP Request failed with status code: " + response);
+		}
+
+		/////////////////////// new code
+
 
 
 
