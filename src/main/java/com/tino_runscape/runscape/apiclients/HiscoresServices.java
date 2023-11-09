@@ -21,7 +21,7 @@ public class HiscoresServices {
 
 
     public String makeGetRequest() {
-        String apiUrl = "http://services.runescape.com/m=hiscore_oldschool/index_lite.ws?player=mandzeete"; //  URL
+        String apiUrl ="https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=mandzeete&fbclid=IwAR3a8fUnotYD7m-Xpo8snrWfdxIwEHG7XtFZyTTSoURcJDiOUQkgrCrNt6I"; //  URL
         try {
 
             String response;
