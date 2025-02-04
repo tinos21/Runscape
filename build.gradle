@@ -16,7 +16,18 @@ repositories {
 }
 
 dependencies {
+
+	// Spring Boot Web module for REST controllers
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// Add WebFlux starter to include WebClient
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// Add Reactor Core to use Mono and Flux
+	implementation 'io.projectreactor:reactor-core:3.5.4'
+
+
+	// Test dependencies
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
 }
