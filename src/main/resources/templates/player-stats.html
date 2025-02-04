@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Player Stats</title>
+</head>
+<body>
+<h1>Player Stats for <span th:text="${username}"></span></h1>
+
+<div th:if="${error}">
+  <p th:text="${error}"></p>
+</div>
+
+<ul>
+  <li th:each="stat : ${playerStatsList}">
+    <p>
+      <span th:text="'Skill: ' + ${stat.skillName}"></span><br>
+      <span th:text="'Level: ' + ${stat.level}"></span><br>
+      <span th:text="'XP: ' + ${stat.xp}"></span>
+    </p>
+  </li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
